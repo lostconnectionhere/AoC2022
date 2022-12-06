@@ -4,7 +4,9 @@ with open('AoC_input_day3.txt','r') as f:
 #test data
 # data = ['vJrwpWtwJgWrhcsFMMfFFhFp', 'jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL','PmmdzqPrVvPwwTWBwg','wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn','ttgJtRGJQctTZtZT','CrZsJsPPZsGzwwsLwLmpwMDw']
 
-item_list = []
+item_list_lower = []
+item_list_upper = []
+
 for string in data:
     part1 = string[:len(string)//2]
     part2 = string[len(string)//2:]
@@ -18,67 +20,43 @@ for string in data:
                 break
 
     # print("Item found in both compartments are: ", letter)
-    item_list += letter
+    # item_list += letter
 
     if letter.isupper() == False:
-        print('Letter', letter, 'is in lowercase')
+        item_list_lower += letter
+        # print('Letter', letter, 'is in lowercase')
     else:
-        print('Letter', letter, 'is in uppercase')
+        item_list_upper += letter
+        # print('Letter', letter, 'is in uppercase')
 
-print(item_list)
+# print(item_list_lower)
+# print(item_list_upper)
 
+import string
+values = dict()
 
-# letter = "B"
+# total score for lowercase items
+total_count_lower = 0
+for item in item_list_lower:
+    for index, letter in enumerate(string.ascii_lowercase):
+        values[letter] = index + 1
+    total_count_lower += (values[item])
+    # print(item)
+    # print(values[item])
 
-# if letter.isupper() == False:
-# 	print('Letter is lowercase: ', letter)
-# else:
-# 	print('Letter is lowercase: ', letter, 'is not lowercase')
+# print('Total score for lowercase items are: ', total_count_lower)
 
+# total score for lowercase items
+total_count_upper = 0
+for item in item_list_upper:
+    for index, letter in enumerate(string.ascii_uppercase):
+        values[letter] = index + 27
+    total_count_upper += (values[item])
+    # print(item)
+    # print(values[item])
 
-# import string
-# values = dict()
+# print('Total score for uppercase items are: ', total_count_upper)
 
-# for index, letter in enumerate(string.ascii_lowercase):
-#     values[letter] = index + 1
+total = total_count_lower + total_count_upper 
 
-# print(values['p'])
-
-
-    # #give value to lowercase letter
-    # import string
-    # values = dict()
-    # for index, letter in enumerate(string.ascii_lowercase):
-    #     values[letter] = index + 1
-
-    # print(values[character2])
-
-    # #give value to uppercase letter
-    # values_capital = dict()
-    # for index, letter in enumerate(string.ascii_uppercase):
-    #     values_capital[letter] = index + 27
-
-    # print(values_capital[character2])
-
-
-
-            
-
-
-
-
-
-#give value to lowercase letter
-# import string
-# values = dict()
-# for index, letter in enumerate(string.ascii_lowercase):
-#     values[letter] = index + 1
-
-# print(values[char2])
-
-#give value to uppercase letter
-# values_capital = dict()
-# for index, letter in enumerate(string.ascii_uppercase):
-#     values_capital[letter] = index + 27
-
-# print(values_capital['Z'])
+print('Total score of items are: ', total)
