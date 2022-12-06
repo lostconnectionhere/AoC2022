@@ -1,25 +1,37 @@
-# with open('AoC_input_day2.txt','r') as f:
-#     data = f.read().splitlines()
+with open('AoC_input_day2.txt','r') as f:
+    data = f.read().splitlines()
 
-data = ['A Y', 'B X', 'C Z'] #test
+# data = ['A Y', 'B X', 'C Z'] #test
 
+score = 0
 for i in data:
     if i == 'A X':
-        print('Score: 4')
+        score += 4
+        print('Score: ', score)
     elif i == 'A Y':
-        print('Score: 8')
+        score += 8
+        print('Score: ', score)
     elif i == 'A Z':
-        print('Score: 3')
+        score += 3
+        print('Score: ', score)
     elif i == 'B X':
-        print('Score: 1')
+        score += 1
+        print('Score: ', score)
     elif i == 'B Y':
-        print('Score: 5')
+        score += 5
+        print('Score: ', score)
     elif i == 'B Z':
-        print('Score: 9')
+        score += 9
+        print('Score: ', score)
     elif i == 'C X':
-        print('Score: 7')
+        score += 7
+        print('Score: ', score)
     elif i == 'C Y':
-        print('Score: 2')
+        score += 2
+        print('Score: ', score)
     elif i == 'C Z':
-        print('Score: 6')
+        score += 6
+        print('Score: ', score)
+
+print('Total score: ', score)
 
