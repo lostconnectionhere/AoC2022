@@ -1,4 +1,4 @@
-with open('/Users/rozsabir/AoC2022/AoC_input_day1.txt','r') as openf:
+with open('AoC_input_day1.txt','r') as openf:
     data = openf.read()
 
 data = data.split('\n')
