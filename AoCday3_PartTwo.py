@@ -2,10 +2,10 @@
 
 data = """vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
-PmmdzqPrVvPwwTWBwg
-wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
-ttgJtRGJQctTZtZT
-CrZsJsPPZsGzwwsLwLmpwMDw"""
+PmmdzqPrVvPwwTWBwg """
+# wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+# ttgJtRGJQctTZtZT
+# CrZsJsPPZsGzwwsLwLmpwMDw"""
 
 data = data.splitlines()
 print(type(data))
@@ -14,25 +14,17 @@ print(type(data))
 
 item_list_lower = []
 item_list_upper = []
-x = 0
-y = 1
-z = 2
+
 
 for string in data:
-    first_elf = data[x]
-    second_elf = data[y]
-    third_elf = data[z]
     #find same character
-    for character in first_elf:
-        for character2 in second_elf:
+    for character in data[0]:
+        for character2 in data[1]:
             if character == character2:
-                for character3 in third_elf:
+                for character3 in data[2]:
                     if character == character3:
                         letter = character       
                 break
-    x += 3
-    y += 3
-    z += 3
 
 print(letter)
 
@@ -45,4 +37,3 @@ else:
 
 print(item_list_lower)
 print(item_list_upper)
-
